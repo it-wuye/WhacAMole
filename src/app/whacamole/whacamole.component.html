@@ -1,0 +1,40 @@
+<div class="title text-center">
+  <span class="span1">Whac-A-Mole</span>
+  <span class="span1">第{{barrier}}关</span>
+</div>
+<div class="paddingv10 bg-white borderb text-center">
+  <span><button (click)="gameStartFn()" class="fixWidth">Start</button></span>
+  <span>Score: <em>{{score.scoreTotal}}</em></span>
+  <span>Hit Rate: <em>{{score.hitRate}}%</em></span>
+  <span>Time Left: <em>{{time.timeLeft}}</em></span>
+  <span><button (click)="gameOverFn('failed')" class="fixWidth">End</button></span>
+</div>
+<div class="moleContent clear">
+   
+  <div>
+      <ul class="moleField clear">
+          <li *ngFor="let fd of field; let i = index;">
+              <div *ngFor="let random of mole.randomDisplay">
+                  <div *ngIf="i == random" class="mole" id="mole" (click)="hitFn(i)" [ngClass]="{ 'moleClicked': i == mole.clickedMole }"> </div>
+              </div>
+          </li>
+      </ul>
+  </div>
+   
+</div>
+<div *ngIf="gameOver.isOver">
+  <div class="mask">
+      <div class="maskInner">
+          Game Over! <br/>
+          <button (click)="gameStartFn('restart')" class="flexWidth">Restart Game</button>
+      </div>
+  </div>
+</div>
+<div *ngIf="gameOver.isPassAll">
+  <div class="mask">
+      <div class="maskInner">
+          Conguratulations! You passed all the barries! <br/>
+          <button (click)="gameStartFn('restart')" class="flexWidth">Restart Game</button>
+      </div>
+  </div>
+</div>

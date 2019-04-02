@@ -1,0 +1,190 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+    background-color: #dedede;    
+}
+
+span {
+    padding: 0 10px 0 10px;
+}
+button {
+    height: 26px;
+    line-height: 26px;
+    background-color:#38e22b;
+    color: #fff;
+}
+button.fixWidth {
+    width: 80px;
+}
+button.flexWidth {
+    padding: 0 10px;
+}
+button:hover {
+    cursor: pointer;
+}
+.paddingv10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.paddingt10 {
+    padding-top: 10px;
+}
+.paddingb10 {
+    padding-bottom: 10px;
+}
+.paddingr30 {
+    padding-right: 30px;
+}
+.marginr10 {
+    margin-right: 10px;
+}
+.marginl10 {
+    margin-left: 10px;
+}
+.borderb {
+    border-bottom: solid 1px #cccccc;
+}
+.clear {
+    clear: both;
+}
+.clear:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.bg-white {
+    background-color: #fff;
+}
+.bg-gray {
+    background-color: #ccc !important;
+}
+.text-center {
+    text-align: center;
+}
+.text-black {
+    color: #333;
+}
+.text-red {
+    color: lightcoral;
+}
+.fs-26 {
+    font-size: 26px;
+}
+.mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    font-size: 26px;
+    color: orange;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 100px;
+}
+ 
+.moleContent {
+    width: 500px;
+    margin: 0 auto;
+    border: 10px #dedede solid;
+}
+.moleField {
+    width: 500px;
+    margin: 0 auto 0;
+}
+.moleField:hover {
+    cursor: -webkit-grabbing;
+}
+.moleField li {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: #448672;
+    list-style-type: none;
+    border: 1px #dedede solid;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.moleField li.score {
+    animation: scoreAnimation .5s;
+    position: absolute;
+    bottom: 500px;
+    left: 50%;
+    opacity: 0;
+}
+.title .span1 {
+    background-color: rgb(47, 20, 110);
+    color:  #ccc;
+    margin: 10px;
+}
+.mole {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    left: 26px;
+    top: 30px;
+    animation: moleDisplay 1s;
+}
+.mole:before, .mole:after  {
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: #ccc;
+    border-radius: 50%;
+    position: absolute;
+    top: -20%;
+    left: -20%;
+}
+.mole:after {
+    left: 70%;
+}
+.mole.tranparent {
+    opacity: 1;
+}
+@keyframes moleDisplay {
+    0% { top: 200px; }
+    50% { top: 30px; }
+    100% { top: 30px; }
+}
+.moleClicked {
+    animation: moleClickingAnimation .5s;
+    opacity: 0;
+}
+.moleClicked:before {
+    animation: moleClickingLeftEar .5s;
+    opacity: 0;
+    top: -200%;
+    left: -200%;
+}
+.moleClicked:after {
+    animation: moleClickingRightEar .5s;
+    opacity: 0;
+    top: -200%;
+    left: 250%;
+}
+@keyframes moleClickingAnimation {
+   0% { opacity: 1;  }
+   100% { opacity: 0; }
+}
+@keyframes moleClickingLeftEar {
+    0% { opacity: 1; top: -20%; left: -20%;  }
+   100% { opacity: 0; top: -200%; left: -200%;  }
+}
+@keyframes moleClickingRightEar {
+    0% { opacity: 1; top: -20%; left: 70%; }
+   100% { opacity: 0; top: -200%; left: 250%; }
+}
